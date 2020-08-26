@@ -12,6 +12,9 @@ int main(int argc, char **argv)
     std::string basename = get_file_name(argv[1],false);
 
     Trimesh<> m_xyz(argv[1]);
+    m_xyz.mesh_data().update_bbox    = false;
+    m_xyz.mesh_data().update_normals = false;
+
     HomotopyBasisData data;
     data.globally_shortest = false;
     data.root = 0;
